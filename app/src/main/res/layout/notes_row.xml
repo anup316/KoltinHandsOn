@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="note"
+            type="com.android.kotlinhandson.dao.Note" />
+
+        <variable
+            name="itemClickListener"
+            type="com.android.kotlinhandson.NotesAdapter.CustomClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:onClick="@{() -> itemClickListener.cardClicked(note)}">
+
+        <TextView
+            android:id="@+id/notes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:paddingStart="10dp"
+            tools:text = "fdfdfdfdf"
+            android:text="@{note.component1()}"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/notes_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="10dp"
+            android:text="@{note.component2()}" />
+
+        <TextView
+            android:id="@+id/notes_date"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:text="@{String.valueOf(note.component3())}"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
+
+
