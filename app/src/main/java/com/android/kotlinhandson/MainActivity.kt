@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity(), NotesAdapter.CustomClickListener {
     override fun onStart() {
         super.onStart()
         addObserver()
+        viewModel.getAllNotes(baseContext)
     }
 
     private fun addObserver() {
